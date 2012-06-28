@@ -2,10 +2,9 @@ package two012.qualification
 
 class SpeakingInTongues {
 
-  private var dictionary = Map[Char, Char]()
+  private var dictionary = SpeakingInTongues.populateDictionary
+  
   def translate(s: String): String = {
-    dictionary = SpeakingInTongues.populateDictionary
-    println (dictionary)
     var translation = new StringBuilder
     s.foreach { c => 
       translation.append(dictionary(c))
@@ -18,10 +17,11 @@ class SpeakingInTongues {
     private val output = "our language is impossible to understand" + "there are twenty six factorial possibilities" + "so it is okay if you want to just give up" + "zq"
 
     def populateDictionary: Map[Char, Char] = {
+      var myDictionary = Map[Char, Char]()
       (1 until input.size).foreach { i =>
-        dictionary += (input(i) -> output(i))
+        myDictionary += (input(i) -> output(i))
       }
-      dictionary
+      myDictionary
     }
 
   }
