@@ -2,10 +2,10 @@ package two012.qualification
 
 class SpeakingInTongues {
 
-  private var dictionary = SpeakingInTongues.populateDictionary
+  private val dictionary = SpeakingInTongues.populateDictionary
   
   def translate(s: String): String = {
-    var translation = new StringBuilder
+    val translation = new StringBuilder
     s.foreach { c => 
       translation.append(dictionary(c))
     }
